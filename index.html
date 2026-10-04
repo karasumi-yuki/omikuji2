@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>運勢おみくじ</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="wrap">
+    <header class="title">
+      <div class="torii" id="torii">⛩️</div>
+      <h1>運勢おみくじ</h1>
+      <p>★0〜10・7項目＋総合運</p>
+    </header>
+
+    <section class="card">
+      <div class="counter-row">
+        <div class="counter">
+          <div class="label">あなたの挑戦回数</div>
+          <div class="num"><span id="myCount">0</span> 回</div>
+        </div>
+      </div>
+
+      <div class="draw-area">
+        <button class="draw-btn" id="drawBtn" type="button">おみくじを引く</button>
+        <div class="hint">各項目を抽選し、その平均値を総合運として表示します</div>
+      </div>
+
+      <div class="result" id="result">
+        <div class="fortune-head">
+          <div class="fortune-label">本 日 の 総 合 運</div>
+          <div class="fortune-name" id="fortuneName">吉</div>
+          <div class="fortune-score" id="fortuneScore">★0.0</div>
+        </div>
+
+        <div id="items"></div>
+
+        <div class="message">
+          <div class="message-range" id="messageRange"></div>
+          <div class="message-text" id="message"></div>
+        </div>
+      </div>
+
+      <details>
+        <summary>このおみくじについて</summary>
+        <div class="note">
+          恋愛運・商売運・学業運・金運・健康運・勝負運・アルパカ運を
+          それぞれ★0〜10で抽選し、その平均値を総合運としています。<br>
+          「あなたの挑戦回数」は、このブラウザ内に保存されます。
+        </div>
+      </details>
+    </section>
+  </main>
+</body>
+</html>

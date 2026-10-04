@@ -1,0 +1,61 @@
+:root {
+  --bg: #f6f1e8;
+  --card: #fffaf2;
+  --ink: #2c2925;
+  --accent: #a3262f;
+  --sub: #7a6f64;
+  --line: #dfd4c6;
+  --gold: #b8872b;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+  background: radial-gradient(circle at top, rgba(163,38,47,.08), transparent 35%), var(--bg);
+  color: var(--ink);
+}
+.wrap { width: min(720px, 92vw); margin: 0 auto; padding: 28px 0 48px; }
+.title { text-align: center; margin-bottom: 18px; }
+.title .torii { font-size: 46px; line-height: 1; }
+.title h1 { margin: 10px 0 4px; letter-spacing: .15em; font-size: clamp(28px,7vw,42px); }
+.title p { margin: 0; color: var(--sub); font-size: 14px; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 22px; box-shadow: 0 10px 30px rgba(70,50,30,.08); padding: 22px; }
+.counter-row { display: grid; grid-template-columns: 1fr; gap: 10px; margin-bottom: 18px; }
+.counter { padding: 13px 10px; text-align: center; border: 1px solid var(--line); border-radius: 14px; background: rgba(255,255,255,.55); }
+.counter .label { color: var(--sub); font-size: 12px; }
+.counter .num { font-size: 24px; font-weight: 800; margin-top: 2px; }
+.draw-area { text-align: center; padding: 16px 0 6px; }
+.draw-btn { appearance: none; border: none; border-radius: 999px; background: var(--accent); color: white; font-size: 20px; font-weight: 800; letter-spacing: .12em; padding: 15px 34px; cursor: pointer; box-shadow: 0 8px 18px rgba(163,38,47,.22); transition: transform .12s ease, opacity .12s ease; }
+.draw-btn:active { transform: scale(.98); }
+.draw-btn:disabled { opacity: .55; cursor: not-allowed; }
+.hint { color: var(--sub); font-size: 12px; margin-top: 10px; }
+.result { display: none; margin-top: 22px; border-top: 1px dashed var(--line); padding-top: 22px; }
+.result.show { display: block; }
+.fortune-head { text-align: center; margin-bottom: 18px; }
+.fortune-label { font-size: 12px; color: var(--sub); letter-spacing: .2em; }
+.fortune-name { margin-top: 4px; font-family: serif; font-size: clamp(36px,9vw,58px); font-weight: 800; color: var(--accent); letter-spacing: .18em; }
+.fortune-score { margin-top: 2px; color: var(--gold); font-weight: 800; font-size: 22px; }
+.item { display: grid; grid-template-columns: 82px 1fr 42px; align-items: center; gap: 10px; padding: 12px 0; border-bottom: 1px solid rgba(223,212,198,.65); }
+.item:last-child { border-bottom: none; }
+.item.overall { margin-bottom: 4px; padding: 14px 8px; border-radius: 12px; background: rgba(184,135,43,.08); border: 1px solid rgba(184,135,43,.22); }
+.item-name { font-weight: 700; white-space: nowrap; }
+.stars { display: flex; gap: 2px; min-width: 0; }
+.star { font-size: clamp(13px,3.6vw,20px); line-height: 1; }
+.star.on { color: var(--gold); }
+.star.off { color: #d8d0c6; }
+.score { text-align: right; font-weight: 800; font-size: 18px; }
+.message { margin-top: 18px; padding: 16px; border-radius: 14px; background: #fff; border-left: 4px solid var(--accent); line-height: 1.75; }
+.message-range { margin-bottom: 6px; color: var(--sub); font-size: 13px; font-weight: 700; }
+.message-text { white-space: pre-line; }
+details { margin-top: 18px; color: var(--sub); font-size: 13px; }
+details summary { cursor: pointer; user-select: none; }
+.note { margin-top: 10px; line-height: 1.6; }
+.shake { animation: shake .45s ease-in-out infinite alternate; }
+@keyframes shake { from { transform: rotate(-2deg) translateY(0); } to { transform: rotate(2deg) translateY(-4px); } }
+@media (max-width: 480px) {
+  .wrap { width: min(94vw,720px); padding-top: 18px; }
+  .card { padding: 16px; }
+  .item { grid-template-columns: 68px 1fr 36px; gap: 6px; }
+  .draw-btn { width: 100%; font-size: 18px; }
+}
